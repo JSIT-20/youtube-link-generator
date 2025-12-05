@@ -4,10 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script>
-        const urlParams = new URLSearchParams(window.location.search);
-        document.getElementById('iframe').src = `https://www.youtube.com/embed/${urlParams.get('video_name')}?end=${urlParams.get('end_time')}`
-    </script>
 </head>
 <body>
     <iframe
@@ -25,5 +21,9 @@
     width: auto;
     height: auto;
     ></iframe>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        document.getElementById('iframe').src = `https://www.youtube.com/embed/${urlParams.get('video_name')}?end=${urlParams.get('end_time')}`
+    </script>
 </body>
 </html>
