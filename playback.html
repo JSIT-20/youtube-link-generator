@@ -4,14 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        document.getElementById('iframe').src = `https://www.youtube.com/embed/${urlParams.get('video_name')}?end=${urlParams.get('end_time')}`
+    </script>
 </head>
 <body>
     <iframe
+    id = "iframe"
     src="https://www.youtube.com/embed/JQ2913bVo30"
     frameborder="0"
     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen"
     allowfullscreen
     referrerpolicy='strict-origin-when-cross-origin'
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
     ></iframe>
 </body>
 </html>

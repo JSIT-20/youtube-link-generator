@@ -11,21 +11,21 @@
     <div class="container">
         <div class="input-group mb-3">
             <div class="input-group-prepend">
-                <span class="input-group-text" id="video">Link to video</span>
+                <span class="input-group-text" id="video-label">Link to video</span>
             </div>
-            <input type="text" class="form-control" placeholder="https://www.youtube.com/watch?v=JQ2913bVo30" aria-label="https://www.youtube.com/watch?v=JQ2913bVo30" aria-describedby="video">
+            <input type="text" class="form-control" placeholder="https://www.youtube.com/watch?v=JQ2913bVo30" aria-label="https://www.youtube.com/watch?v=JQ2913bVo30" aria-describedby="video" id="video">
         </div>
         <div class="input-group mb-3">
             <div class="input-group-prepend">
-                <span class="input-group-text" id="end_time">Video end time (in seconds)</span>
+                <span class="input-group-text" id="end_time-label">Video end time (in seconds)</span>
             </div>
-            <input type="text" class="form-control" placeholder="10" aria-label="10" aria-describedby="end_time">
+            <input type="text" class="form-control" placeholder="10" aria-label="10" aria-describedby="end_time" id="end_time">
         </div>
         <div class="input-group mb-3">
             <div class="input-group-prepend">
-                <span class="input-group-text" id="speed">Playback speed (default is 1)</span>
+                <span class="input-group-text" id="speed-label">Playback speed (default is 1)</span>
             </div>
-            <input type="text" class="form-control" placeholder="0.8" aria-label="0.8" aria-describedby="speed">
+            <input type="text" class="form-control" placeholder="0.8" aria-label="0.8" aria-describedby="speed" id="speed">
         </div>
         <div class="text-center">
             <button class="btn btn-primary" type="submit" onclick="redirectToPage()">See video</button>
@@ -40,7 +40,7 @@
             video_name = video_link.split("watch?v=")[1]
             end_time = document.getElementById('end_time').value
             speed = document.getElementById('speed').value
-            window.location.href = `playback.html?video_link=${video_link}&end_time=${end_time}&speed=${speed}`; // Replace 'destination.html' with your target URL
+            window.location.href = `playback.html?video_name=${video_name}&end_time=${end_time}&speed=${speed}`; // Replace 'destination.html' with your target URL
         }
     </script>
   </body>
