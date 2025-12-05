@@ -30,11 +30,12 @@
             'onStateChange': onPlayerStateChange
           }
         });
-        player.setPlaybackRate(Number(urlParams.get('speed')))
       }
 
       // 4. The API will call this function when the video player is ready.
       function onPlayerReady(event) {
+        urlParams = new URLSearchParams(window.location.search);
+        player.setPlaybackRate(Number(urlParams.get('speed')))
         event.target.playVideo();
       }
 
