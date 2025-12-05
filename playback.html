@@ -30,6 +30,7 @@
             'onStateChange': onPlayerStateChange
           }
         });
+        player.setPlaybackRate(urlParams.get('speed'))
       }
 
       // 4. The API will call this function when the video player is ready.
@@ -44,7 +45,7 @@
       function onPlayerStateChange(event) {
         urlParams = new URLSearchParams(window.location.search);
         if (event.data == YT.PlayerState.PLAYING && !done) {
-          setTimeout(stopVideo, urlParams.get('end_time'));
+          setTimeout(stopVideo, urlParams.get('end_time') * 1000);
           done = true;
         }
       }
