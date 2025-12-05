@@ -23,11 +23,11 @@
           width: '640',
           videoId: urlParams.get('video_name'),
           playerVars: {
-            'playsinline': 1
+            'playsinline': 1,
+            'end': Number(urlParams.get('end_time'))
           },
           events: {
             'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
           }
         });
       }
@@ -37,21 +37,6 @@
         urlParams = new URLSearchParams(window.location.search);
         player.setPlaybackRate(Number(urlParams.get('speed')))
         event.target.playVideo();
-      }
-
-      // 5. The API calls this function when the player's state changes.
-      //    The function indicates that when playing a video (state=1),
-      //    the player should play for six seconds and then stop.
-      var done = false;
-      function onPlayerStateChange(event) {
-        urlParams = new URLSearchParams(window.location.search);
-        if (event.data == YT.PlayerState.PLAYING && !done) {
-          setTimeout(stopVideo, urlParams.get('end_time') * 1000);
-          done = true;
-        }
-      }
-      function stopVideo() {
-        player.stopVideo();
       }
     </script>
   </body>
